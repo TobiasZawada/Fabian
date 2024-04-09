@@ -1,22 +1,87 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Die Essenz von Noethers Satz</title>
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      processEscapes: true
-    }
-  });
-  </script>  <script type="text/javascript"
-    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  </script>
-</head>
+  <head>
+    <title>Die Essenz von Noethers Satz</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	  tex2jax: {
+	      inlineMath: [['$','$'], ['\\(','\\)']],
+	      processEscapes: true
+	  }
+      });
+    </script>  <script type="text/javascript"
+		       src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+  </head>
   <body>
-    Der Schlüssel zu Nöthers Satz ist, dass man mit der Lagrange-Gleichung \(\partial_{q} L = \frac{d}{dt}\left(\partial_{\dot q} L\right)\)
-    die Ableitung der Lagrange-Funktion nach \(q\) durch die Zeitableitung von \(\partial_{\dot q}L\) ersetzen kann.
+    <p>
+      Der Schlüssel zu Nöthers Satz ist, dass man mit der Lagrange-Gleichung \(\partial_{q} L = \frac{d}{dt}\left(\partial_{\dot q} L\right)\)
+      die Ableitung \(\partial_q L\) der Lagrange-Funktion \(L\) durch die Zeitableitung \(\frac{d}{dt}\left(\partial_{\dot q}L\right)\) ersetzen kann
+      und dadurch ein totales Zeitdifferenzial erhält, das null bleibt.
+    </p>
+    <p>
+      Sei $h^s:M\rightarrow M$ eine \(s\)-parametrisierte Familie von Diffeomorphismen, für die die Lagrange-Funktion \(L:TM\rightarrow \mathbb{R}\) invariant ist:
+    </p>
+    <p>
+      \[
+      L(h^s_{*}q) := L\left(h(q),\partial_q h^s(q) \cdot \dot q\right) \overset{!}{=} L(q,\dot q)
+      \]
+      was heißt:
+      \[
+      \frac{d}{ds} L(h^s_{*}q) = 0
+      \]
+      Für die Ableitungen nach \(s\) und \(t\) schreiben wir \(\frac{d}{ds}\) und \(\frac{d}{dt}\), obwohl sie auch partielle Ableitungen sind.
+      Damit sind sie besser von den partiellen Ableitungen \(\partial_q\) und \(\partial_{\dot q}\) der Lagrange-Funktion nach ihren Argumenten unterscheidbar.
+    </p>
 
-    
+    <p>
+      Wir betrachten die durch \(s\) glatt parametrierte Lösungsfamilie \(q(s,t) = h^s(q(t))\) der Lagrange-Gleichung.
+    </p>
+
+    <p>
+      Zeitableitung: \(\dot q(s,t) = \partial_t q(s,t)\)
+    </p>
+
+    <p>
+      Ableitung nach Parameter: \(q'(s,t) = \partial_s q(s,t)\)
+    </p>
+
+    <p>
+      Die Symmetrie von \(q(s,t)\) bedeutet, dass die Lagrange-Funktion invariant bzgl. einer Änderung von \(s\) ist.
+      Das heißt, die partielle Ableitung von \(L\left(q(s,t), \dot q(s,t)\right)\) nach \(s\) ist null.
+    </p>
+    <p>
+      \[
+      0 = \frac{d}{ds} L = \partial_q L \cdot q' + \partial_{\dot q} L \cdot \dot q'
+      \]
+    </p>
+    <p>
+      Den ersten Term können wir mit Hilfe der Lagrange-Gleichung  \(\partial_{q} L = \frac{d}{dt}\left(\partial_{\dot q} L\right)\) durch die Zeitableitung von \(\partial_{\dot q}L\) ersetzen:
+    </p>
+    <p>
+      \[
+      0 = \frac{d}{dt}\left(\partial_{\dot q}L\right) \cdot q' + \partial_{\dot q} L \cdot \dot q'
+      \]
+    </p>
+    <p>
+      Das ist die Produktregel zum Differenzieren von
+      \[
+      0 = \frac{d}{dt}\left(\partial_{\dot q}L \cdot q'\right)
+      \]
+    </p>
+    <p>
+      Jetzt brauchen wir, dass \(q\) mit Hilfe einer Diffeomorphismenfamilie \(h^s:M\rightarrow M\) als \(q(s,t) = h^s(q(t))\) für eine beliebige Lösung \(q\) der Lagrange-Gleichung konstruiert wird.
+    </p>
+    <p>
+      Damit ergibt sich:
+      \[
+      0 = \frac{d}{dt}\left(\partial_{\dot q}L \cdot \partial_s h(q)\right)
+      \]
+      und damit ist
+      \[
+      I(q,\dot q) := \partial_{\dot q} L(q,\dot q) \cdot \partial_s h^s(q)
+      \]
+      ein erstes Integral der Lagrange-Gleichung.
+    </p>
   </body>
 </html>
