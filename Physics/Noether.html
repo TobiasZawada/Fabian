@@ -5,6 +5,14 @@
   <script type="text/javascript"
   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
+<script type="text/javascript">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    processEscapes: true
+  }
+});
+</script>
 </head>
   <body>
     Der Schlüssel zu Nöthers Satz ist, dass man mit der Lagrange-Gleichung $\partial_{q} L = \frac{d}{dt}\left(\partial_{\dot q} L\right)$ die Ableitung der Lagrange-Funktion nach $q$ durch die Zeitableitung von $\partial_{\dot q}L$ ersetzen kann.
